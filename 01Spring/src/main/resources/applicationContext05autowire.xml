@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car" class="cn.happy.day05.Car">
+        <property name="names" value="lala"></property>
+    </bean>
+
+<bean id="student" class="cn.happy.day05.Student" autowire="byName">
+    <property name="name" value="文杰"></property>
+    <property name="age" value="23"></property>
+</bean>
+
+</beans>

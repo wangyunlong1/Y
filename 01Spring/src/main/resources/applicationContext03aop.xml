@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+ http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+   <!--dao层的配置-->
+    <bean id="someDAO" class="cn.happy.day03.dao.SomeDAOImpl"></bean>
+  <!--service层的配置-->
+    <bean id="someService" class="cn.happy.day03.service.SomeServiceImpl">
+        <property name="dao" ref="someDAO"></property>
+    </bean>
+    <!--增强;-->
+<bean id="beforeAdvice" class="cn.happy.day03.aop.MyBeforeAdvice"></bean>
+
+
+
+    <aop:config>
+        <!--切点-->
+        <aop:pointcut id="mypointcut" expression="execution(* *..service.*.*(..))"></aop:pointcut>
+        <!--织入-->
+        <aop:advisor advice-ref="beforeAdvice" pointcut-ref="mypointcut"></aop:advisor>
+    </aop:config>
+</beans>

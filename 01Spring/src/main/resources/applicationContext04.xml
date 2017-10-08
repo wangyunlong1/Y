@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--HappYService对象-->
+   <bean id="stu" class="cn.happy.day04.Student">
+       <property name="name" value="sjjb"></property>
+       <property name="age" value="20"></property>
+   </bean>
+    <bean id="MyCollection" class="cn.happy.day04.MyCollection">
+       <property name="properties">
+           <props>
+               <prop key="001">文杰</prop>
+               <prop key="002">天赐</prop>
+           </props>
+       </property>
+        <property name="array">
+            <array>
+                <value>李小龙</value>
+                <value>成龙</value>
+            </array>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="001">
+                    <value>张丽颖</value>
+                </entry>
+                <entry key="002">
+                    <value>孔莉</value>
+                </entry>
+            </map>
+        </property>
+   </bean>
+
+<!--map-->
+</beans>
